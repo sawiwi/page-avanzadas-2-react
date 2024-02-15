@@ -9,7 +9,7 @@ const HomeComponent = () => {
   return (
     <Fragment>
       <CarouselSection />
-      <SearchPropertiesSection />
+      {/* <SearchPropertiesSection /> */}
       <HighlightedProjects />
       <AboutInfo/>
       {/* <ServicesContactSection /> */}

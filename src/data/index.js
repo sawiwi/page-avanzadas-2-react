@@ -95,7 +95,7 @@ export const mainCarouselLegalServicesData = [
 ];
 
 /** Tabs search by Property Data */
-export const webServicesTabs = ['venta', 'arriendo ', 'arriendo_temporal'];
+export const webServicesTabs = ['Venta', 'Arriendo ', 'Arriendo_temporal'];
 
 /* Imagenes de banco - Data */
 export const BankData = [

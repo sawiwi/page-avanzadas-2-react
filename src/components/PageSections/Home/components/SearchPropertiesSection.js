@@ -128,6 +128,20 @@ const SearchPropertiesSection = () => {
       value: 4, name:"3 dormitorios"
     }
   ];
+  const superficie = [
+    {
+      value: 1, name: "superficie"
+    } , 
+    {
+      value: 2, name:"100 mts"
+    }
+    ,{
+      value: 3, name:"2 superficie"
+    },
+    {
+      value: 4, name:"3 superficie"
+    }
+  ];
   const bath = [
     {
       value: 1, name: "Baños"
@@ -158,15 +172,15 @@ const SearchPropertiesSection = () => {
   ]
 
   return (
-    <div className="absolute top-40 inset-96">
-      <div className="bg-primary rounded-2xl w-100 w-[60%] mx-auto text-secondary p-4 xl:px-10 border shadow-xl">
-        <h2 className='text-2xl font-semibold text-secondary-800 text-center py-3'>Búsqueda avanzada</h2>
+    <div className="hidden xl:block absolute z-30 xl:top-24 xl:inset-52 3xl:top-40 3xl:inset-96">
+      <div className="bg-primary rounded-2xl w-full h-[70%] xl:h-[83vh] 2xl:w-[65%] 3xl:h-[65vh] 3xl:w-[60%]    mx-auto text-secondary p-4 2xl:px-10 border shadow-xl">
+        <h2 className='text-2xl 3xl:text-3xl font-semibold text-secondary-800 text-center py-3'>Búsqueda avanzada</h2>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 grid-rows-1 gap-4">
             <div className="d-flex justify-start items-start pb-4">
               <div className=" border-x-primary-700">
                 <nav
-                  className="space-x-1 p-2 w-100 text-secondary mb:16 mx-auto w-6/6 lg:w-3/6 flex justify-center items-center flex-col sm:flex-row"
+                  className="space-x-1 p-2 w-100 text-secondary mx-auto w-6/6 lg:w-3/6 flex justify-center items-center flex-col sm:flex-row"
                   aria-label="Tabs"
                 >
                   {categories.map((tab) => (
@@ -174,9 +188,9 @@ const SearchPropertiesSection = () => {
                       key={tab}
                       className={`${
                         activeTab === tab
-                          ? 'bg-primary text-secondary p-2'
-                          : 'border border-primary bg-primary-700 text-secondary hover:text-secondary-700 hover:border-secondary-700 '
-                      }  w-full text-md my-1 font-medium leading-5 rounded-[100px] py-3 focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-secondary ring-opacity-60 ring-offset-2 focus:outline-none focus:bg-secondary text-secondary p-2`}
+                          ? 'bg-secondary text-primary p-2 px-10'
+                          : 'border border-secondary bg-primary-700 text-secondary hover:text-secondary-700 xl:px-10 hover:border-secondary-700 '
+                      }  w-full text-md my-1 font-medium leading-5 rounded-[100px] py-2 focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-secondary ring-opacity-60 ring-offset-2 focus:outline-none focus:bg-secondary text-primary p-2`}
                       onClick={(ev) => {
                         ev.preventDefault();
                         setActiveTab(tab);
@@ -194,22 +208,6 @@ const SearchPropertiesSection = () => {
             </div>
           </div>
           <div className='grid grid-cols-1'>
-            <div className="mx-1 my-2">
-              <select
-                className="select select-ghost bg-white rounded-full border-gray-300 w-full text-secondary-700 placeholder:text-secondary"
-                placeholder="Tipo de Propiedad"
-                value={selectedSelects?.typeOfProperty}
-                onChange={onTypeOfPropertyChange}
-              >
-                {typeOfProperty?.map(({ value, name }) => (
-                  <option key={value} value={name} className='text-secondary'>
-                    {name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 w-full lg:grid-cols-2">
           <div className="mx-1 my-2">
               <select
                 className="select select-ghost bg-white rounded-full border-gray-300 w-full text-secondary-700 placeholder:text-secondary"
@@ -224,6 +222,9 @@ const SearchPropertiesSection = () => {
                 ))}
               </select>
             </div>
+       
+          </div>
+          <div className="grid grid-cols-1 w-full lg:grid-cols-2">
             <div className="mx-1 my-2">
               <select
                 className="select select-ghost bg-white rounded-full text-secondary border-gray-300 w-full placeholder:text-secondary" 
@@ -233,6 +234,20 @@ const SearchPropertiesSection = () => {
               >
                 {communes?.map(({ id, name }) => (
                   <option key={id} value={name} className='text-secondary'>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mx-1 my-2">
+              <select
+                className="select select-ghost bg-white rounded-full border-gray-300 w-full text-secondary-700 placeholder:text-secondary"
+                placeholder="Tipo de Propiedad"
+                value={selectedSelects?.typeOfProperty}
+                onChange={onTypeOfPropertyChange}
+              >
+                {typeOfProperty?.map(({ value, name }) => (
+                  <option key={value} value={name} className='text-secondary'>
                     {name}
                   </option>
                 ))}
@@ -280,11 +295,19 @@ const SearchPropertiesSection = () => {
                 ))}
               </select>
             </div>
+            <div className="mx-1 my-2">
+              <input
+                className="input select-ghost bg-white rounded-full border-gray-300 w-full text-secondary-700 placeholder:text-secondary"
+                placeholder="Superficie m2"
+                // value={selectedSelects?.surfacem2}
+                // onChange={onSuperfaceChange}
+              />
+            </div>
           </div>
-          <div className="mx-1 flex justify-center items-center my-2">
+          <div className="mx-1 flex justify-center items-center my-1">
               <ButtonPrimary
                 type="submit"
-                className="block w-full p-[.7rem] text-center rounded-full border bg-secondary-700 text-primary  hover:bg-secondary-700"
+                className="block w-full p-[.5rem] text-center rounded-full border bg-secondary-700 text-primary  hover:bg-secondary-700"
               >
                 {isSearching ? 'Buscando...' : 'Buscar'}
               </ButtonPrimary>
@@ -293,12 +316,12 @@ const SearchPropertiesSection = () => {
 
 
           <div className="my-5 w-full ">
-            <p className="text-sm text-primary-700">
+            <p className="text-sm text-secondary-700">
               Buscar por{' '}
               <button
                 onClick={handleOpenSearchCode}
-                className="text-primary-800 hover:text-secondary-800"
-              >
+                className="text-secondary-700 font-semibold hover:underline"
+              > 
                 código de propiedad
               </button>
             </p>

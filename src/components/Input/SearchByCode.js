@@ -56,7 +56,7 @@ const SearchByCode = () => {
     <Fragment>
       <form onSubmit={handleSubmit}>
         <div className="relative">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <div className="absolute inset-y-0 left-0 flex items-center p-2 pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
               className="w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -78,11 +78,11 @@ const SearchByCode = () => {
             id="search-property"
             value={propertyId}
             onChange={onPropertyIdChange}
-            className={`${CLASSES} p-3 pl-10 text-md`}
+            className={`${CLASSES} p-2 pl-10 text-sm`}
             placeholder="Código: 00001"
           />
 
-          <button className="text-secondary absolute pt-2 top-[0px] right-[1px] bottom-[0px] bg-primary-700 hover:bg-primary py-2.5 px-4 xl:px-7 rounded-r-full">
+          <button className="text-primary-700 absolute pt-2 top-[0px] right-[1px] bottom-[0px] bg-secondary-700 hover:bg-secondary py-2 px-4 xl:px-7 rounded-r-full">
             {isSearching ? 'Buscando...' : 'Buscar'}
           </button>
         </div>
