@@ -30,24 +30,28 @@ export const CardServicesData = [
     id:1,
     icon:<MdAddHomeWork />,
     title:"Publica con nosotros",
+    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, accusantium id. Adipisci voluptatem, dolor veritatis beatae quam magni, reiciendis commodi voluptatibus aliquid fuga cupiditate veniam illum expedita? Nostrum, dicta temporibus!',
     button:true
   },
   {
     id:2,
     icon:<HiOutlinePresentationChartBar />,
     title:"Asesoria bancaria",
+    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, accusantium id. Adipisci voluptatem, dolor veritatis beatae quam magni, reiciendis commodi voluptatibus aliquid fuga cupiditate veniam illum expedita? Nostrum, dicta temporibus!',
     button:false
   },
   {
     id:3,
     icon:<HiOutlineCurrencyDollar/>,
     title:"Servicios Legales",
+    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, accusantium id. Adipisci voluptatem, dolor veritatis beatae quam magni, reiciendis commodi voluptatibus aliquid fuga cupiditate veniam illum expedita? Nostrum, dicta temporibus!',
     button:false
   },
   {
     id:4,
     icon:<HiOutlineBriefcase />,
     title:"Administración de arriendos",
+    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, accusantium id. Adipisci voluptatem, dolor veritatis beatae quam magni, reiciendis commodi voluptatibus aliquid fuga cupiditate veniam illum expedita? Nostrum, dicta temporibus!',
     button:false
   },
 

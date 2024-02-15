@@ -178,33 +178,14 @@ setSelectedSelects({
   };
 
     return(
-        <div className="bg-secondary w-[21rem] xl:w-[595px] 3xl:w-[100%] xl:min-h-[40vh] 3xl:min-h-[75vh] xl:p-2 3xl:p-8">
-          <div className="text-center">
-            <p className="text-xl xl:text-lg 3xl:text-2xl  font-bold text-primary py-6 xl:mt-0 3xl:mt-16 px-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam facilis fugiat, tenetur eius rem, architecto esse perspiciatis aperiam
-            </p>
-          </div>
+        <div className="bg-primary shadow-2xl w-[21rem] xl:w-[595px] 3xl:w-[50%] xl:min-h-[40vh] 3xl:min-h-[65vh] xl:p-2 3xl:p-8">
         {/* <form name="FormSubmit" onSubmit={onFormSubmit} className="xl:py-3 3xl:py-6 xl:px-6 3xl:px-20"> */}
-          <form name="FormSubmit" onSubmit={onFormSubmit} className="xl:py-3 3xl:py-6 xl:px-6 3xl:px-20">
-              {/* <div className="flex mb-5 justify-center">
-                  <select
-                  value={selectedSelects?.operationType}
-                  onChange={onOperationTypeChange}
-                  className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
-                  >
-                  <option value="">Tipo de operación...</option>
-                  {operationType.map((option) => (
-                      <option key={option.value} value={option.value}>
-                      {option.name}
-                      </option>
-                  ))}
-                  </select>
-              </div> */}
-            <div className="flex justify-center mb-5">
+          <form name="FormSubmit" onSubmit={onFormSubmit} className="pt-5 py-3 px-3 xl:py-3 3xl:py-6 xl:px-6 3xl:px-20">
+            <div className="flex justify-center mb-5 my-9">
                 <select
                 value={selectedSelects?.typeProperty}
                 onChange={onTypeOfPropertyChange}
-                className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
+                className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal border border-secondary"
                 >
                 <option value="">Tipo de propiedad</option>
                 {typeOfProperty.map((option) => (
@@ -221,7 +202,7 @@ setSelectedSelects({
                   placeholder="Nombre completo"
                   name="fullName"
                   id="fullName"
-                  className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
+                  className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal border border-secondary"
                   minLength="3"
                   value={formData?.fullName}
                   onChange={handleNameChange}
@@ -235,7 +216,7 @@ setSelectedSelects({
                   name="phone"
                   id="phone"
                   placeholder="Teléfono"
-                  className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
+                  className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal border border-secondary"
                   value={formData?.phone}
                   onChange={handlePhoneChange}
                 
@@ -250,7 +231,7 @@ setSelectedSelects({
                   name="email"
                   id="email"
                   placeholder="Correo electrónico"
-                  className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
+                  className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal border border-secondary"
                   value={formData?.email}
                   onChange={handleEmailChange}
                 />
@@ -259,7 +240,7 @@ setSelectedSelects({
           <div className="flex mb-5 justify-center">
               <select
               onChange={onRegionChange}
-              className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
+              className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal border border-secondary"
               >
               {regions.map((region) => (
                   <option key={region.id} value={region.id}>
@@ -289,7 +270,7 @@ setSelectedSelects({
             <div className="flex mb-5 justify-center items-center">
               <button
                 type="submit"
-                className="block w-[200px] p-4 my-2 mb-4  font-semibold text-md rounded-full hover:shadow-sm transition ease-in-out duration-300 text-secondary bg-primary hover:bg-primary-opacity"
+                className="block w-[200px] p-4 my-2 mb-4  font-semibold text-md rounded-full hover:shadow-sm transition ease-in-out duration-300 text-primary bg-secondary hover:bg-secondary-700"
               >
                 <span className="max-h-10">
                   {loading ? (
