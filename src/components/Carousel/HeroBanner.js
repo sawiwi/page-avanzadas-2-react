@@ -38,10 +38,6 @@ const HeroBanner = () => {
           </div>
 
 
- 
-
-
-
       {/* {data?.length > 0
         ? data.map((slide) => (
             <div key={slide.id}>

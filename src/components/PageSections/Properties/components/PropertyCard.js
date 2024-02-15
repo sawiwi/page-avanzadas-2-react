@@ -24,7 +24,7 @@ const PropertyCard = ({ data, isList }) => {
               isList
                 ? 'h-[299px] w-[100%] md:w-[400px] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none '
                 : 'rounded-t-xl'
-            }  object-cover h-[299px] w-full`}
+            }  object-cover h-[299px] w-96`}
             src={image}
             alt={`top-img-${title}`}
             width="full"
@@ -38,7 +38,7 @@ const PropertyCard = ({ data, isList }) => {
           isList
             ? 'h-[299px] w-[100%] md:w-[400px] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
             : 'rounded-t-xl'
-        }  object-cover h-[299px] w-full`}
+        }  object-cover h-[299px] w-96`}
         src={`https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg`}
         alt={`top-img-${title}`}
         width="full"
@@ -50,8 +50,8 @@ const PropertyCard = ({ data, isList }) => {
     <div
       className={`${
         isList
-          ? 'flex flex-col items-centerborder border-primary-700 bg-primary hover:shadow-xl md:flex-row '
-          : 'w-full'
+          ? 'flex flex-col items-center border border-primary-700 bg-primary hover:shadow-xl md:flex-row '
+          : 'w-96'
       } border rounded-xl hover:cursor-pointer hover:shadow-xl bg-primary-700 ease-in-out hover:scale-105 transition-all duration-300`}
     >
 

@@ -15,7 +15,7 @@ const HighlightedProjects = () => {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 4 },
-    1920: { items: 4 },
+    1920: { items: 6},
   };
 
   /** Get Highlighted Properties only */
@@ -31,12 +31,17 @@ const HighlightedProjects = () => {
 
   return (
     <Section className="bg-[#f2f4f7] py-3 mb-6 xl:py-1 ">
-      <HeadingSection title="PROPIEDADES DESTACADAS" className="3xl:my-1"/>
+      {/* <HeadingSection title="PROPIEDADES DESTACADAS" className="3xl:my-1"/> */}
+      <div className='3xl:my-7 xl:px-2 flex justify-between '>
+        <h2 className='text-3xl justify-start'>PROPIEDADES DESTACADAS</h2>
+        <hr />
+      </div>
 
       <div className=" h-[600px] flex items-center justify-center">
         {isLoading && <p>Obteniendo Propiedades destacadas...</p>}
         {getHighlightedProperties.length > 0 ? (
           <AliceCarousel
+            className="3xl:w-50px"
             mouseTracking
             responsive={responsive}
             controlsStrategy="alternate"
