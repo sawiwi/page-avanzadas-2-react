@@ -79,7 +79,7 @@ const Footer = () => (
             <ul className="text-sm text-gray-900 mt-5 block xl:flex xl:justify-between gap-1">
               <li className='mb-3'>
                 <Link
-                  to="/quienes-somos"
+                  to="/nosotros"
                   className="hover:underline underline-offset-4 decoration-secondary text-secondary-700 font-customFont uppercase"
                 >
                   Nosotros
@@ -87,7 +87,7 @@ const Footer = () => (
               </li>
               <li className='mb-3'>
                 <Link
-                  to="/soy-propietario/quiero-vender"
+                  to="/propiedades"
                   className="hover:underline underline-offset-4 decoration-secondary text-secondary-700 font-customFont uppercase"
                 >
                   Propiedades
@@ -95,7 +95,7 @@ const Footer = () => (
               </li>
               <li className='mb-3'>
                 <Link
-                  to="/eres-corredor/asociate"
+                  to="/servicios"
                   className="hover:underline underline-offset-4 decoration-secondary text-secondary-700 font-customFont uppercase"
                 >
                   Servicios
@@ -103,7 +103,7 @@ const Footer = () => (
               </li>
               <li className='mb-3'>
                 <Link
-                  to="/soy-inversionista/unidades-en-remate"
+                  to="/contacto"
                   className="hover:underline underline-offset-4 decoration-secondary text-secondary-700 font-customFont uppercase"
                 >
                   Contacto
@@ -111,7 +111,7 @@ const Footer = () => (
               </li>
               <li className='mb-3'>
                 <Link
-                  to="/soy-inversionista/unidades-en-remate"
+                  to="/"
                   className="hover:underline underline-offset-4 decoration-secondary text-secondary-700 font-customFont uppercase"
                 >
                   Publica gratis
