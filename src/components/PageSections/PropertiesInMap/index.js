@@ -11,13 +11,17 @@ import { PropertiesContext } from '../../../context/properties/PropertiesContext
 import Section from '../../Section/Section';
 import MarkerIcon from '../../../assets/img/map/marker.png';
 import { parseToCLPCurrency, parseToDecimal } from '../../../utils';
+import PropertiesTop from '../../Navigation/PropertiesTop';
 
 const PropertiesInMapComponent = () => {
   const { contextData } = useContext(PropertiesContext);
-  const { propertiesInMap, totalItems } = contextData;
+  const { propertiesInMap, totalItems, properties,page } = contextData;
   const [selectedProperty, setSelectedProperty] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   // const [totalItems, setTotalItems] = useState('');
+  const [isGrid, setIsGrid] = useState(true);
+  const [isList, setIsList] = useState(false);
+  const [isMap, setIsMap] = useState(false);
 
   useEffect(() => {
     if (propertiesInMap.length > 0) {
@@ -27,22 +31,27 @@ const PropertiesInMapComponent = () => {
 
   return (
     <Section>
-      <div className="container">
+      <div className="container mt-36 mb-24  xl:mt-36 xl:mb-0">
         <div className="mb-10">
-          <h1 className="text-xl text-secondary">Localización de Propiedades </h1>{' '}
-          <p className='text-secondary'
-            style={{
-              fontSize: '1rem',
-              fontWeight: '300',
-          
-            }}
-          >
+        <PropertiesTop
+          {...{
+            totalItems,
+            page,
+            isGrid,
+            setIsGrid,
+            isList,
+            setIsList,
+            properties,
+            isMap, 
+            setIsMap
+          }}
+        />
+          {/* <p>
             Descubre propiedades es una forma fácil y eficiente de encontrar y
             explorar propiedades en una ubicación específica
-          </p>
+          </p> */}
         </div>
-        
-        <p className="text-secondary text-sm"><b>{totalItems} Propiedades</b> activas en mapa </p>
+        {/* <p className="text-secondary text-sm"><b>{totalItems} Propiedades</b> activas en mapa </p> */}
 
         <div>
           <Map
@@ -69,6 +78,28 @@ const PropertiesInMapComponent = () => {
             }}
           >
             {propertiesInMap?.map((property) => {
+
+                let longitude = -70.64827;
+                let latitude = -33.45694;
+
+                  if( property && property.LngLat){
+                    const lngMatch = property.LngLat.match(/Lng: ([-\d.]+)/);
+                    const latMatch = property.LngLat.match(/Lat: ([-\d.]+)/);
+
+                    if(lngMatch && lngMatch[1]){
+                      longitude = Number(lngMatch[1]);
+                    }
+
+                    if(latMatch && latMatch[1]){
+                      latitude = Number(latMatch[1]);
+                    }
+                  }
+              // let longitude =
+              // Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) ||
+              // -70.64827;
+              // let latitude =
+              // Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[1]) ||
+              // -33.45694;
 
               // console.log(property?.image)
               const image = property?.image
@@ -102,12 +133,6 @@ const PropertiesInMapComponent = () => {
                 );
               };
 
-              let longitude =
-                Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) ||
-                -70.64827;
-              let latitude =
-                Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[1]) ||
-                -33.45694;
 
               return (
                 <Marker

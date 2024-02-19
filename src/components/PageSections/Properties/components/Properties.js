@@ -12,7 +12,7 @@ import styles from '../../../../styles/components/OutstandingProject/Outstanding
 import { truncateStringSmall } from '../../../../utils';
 import { company } from '../../../../constants/consts/company';
 
-const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
+const Properties = ({ isGrid, isList, setIsGrid, setIsList, isMap, setIsMap }) => {
   const { contextData } = useContext(PropertiesContext);
   const {
     properties,
@@ -58,7 +58,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
 
   return (
     <React.Fragment>
-      <div className="flex relative flex-col w-[100%] mt-36 mb-24  xl:mt-36 xl:mb-0">
+      <div className="flex relative flex-col w-full mt-36 mb-24  xl:mt-36 xl:mb-0">
         <PropertiesTop
           {...{
             totalItems,
@@ -68,10 +68,12 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
             isList,
             setIsList,
             properties,
+            isMap, 
+            setIsMap
           }}
         />
         <div className="flex flex-col-reverse md:flex-row">
-          <div className="w-full md:w-4/5  mb-48">
+          <div className="w-full md:w-5/5  mb-48">
             {/* PROPERTIES LIST */}
             {isLoading && <Spinner />}
             {notFoundMsg && <NotFound message={notFoundMsg} />}
@@ -100,7 +102,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
             </div>
           </div>
           {/* ADVANCED SEARCH FORM */}
-          <div className="w-full md:w-1/5 bg-secondary border ml-0 xl:ml-2">
+          {/* <div className="w-full md:w-1/5 bg-secondary border ml-0 xl:ml-2">
             <button
               onClick={handleToggleForm}
               className="bg-secondary/75 w-full mx-auto  p-2 hover:bg-secondary border-b"
@@ -175,7 +177,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
                 <div className="flex-1 border-b border-gray-200"></div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </React.Fragment>

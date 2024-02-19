@@ -3,10 +3,11 @@ import Properties from './components/Properties';
 
 const PropertiesComponent = () => {
   const [isGrid, setIsGrid] = useState(true);
-  const [isList, setIsList] = useState(false);
+  // const [isList, setIsList] = useState(false);
+  const [isMap, setIsMap] = useState(false);
   return (
     <Fragment>
-      <Properties {...{ isGrid, isList, setIsGrid, setIsList }} />
+      <Properties {...{ isGrid, setIsGrid, isMap, setIsMap }} />
     </Fragment>
   );
 };

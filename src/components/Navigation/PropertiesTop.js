@@ -11,6 +11,8 @@ const PropertiesTop = ({
   isList,
   setIsList,
   properties,
+  isMap,
+  setIsMap
 }) => {
   const { contextData } = useContext(PropertiesContext);
   const { sortOrder, handleSortChange } = contextData;
@@ -22,7 +24,7 @@ const PropertiesTop = ({
       case '/propiedades':
         return 'Propiedades';
       default:
-        return 'Unne';
+        return 'Mapa de propiedades';
     }
   };
 
@@ -31,23 +33,17 @@ const PropertiesTop = ({
   }, [pathname]);
 
   return (
-    <div className=" py-5 px-3  mb-4  w-full">
+    <div className=" py-5 px-3 mb-1  w-full">
         <div className="flex justify-start items-center">
-          <span className=' h-10 mr-2 border-l-4 border-secondary'>
-          </span>
             <h1 className="text-2xl xl:text-3xl font-ligth  text-secondary-700 uppercase ">
               {getTitle(pathname)}
             </h1>
         </div>
       <div className="flex justify-between items-center my-4">
-      <div className="flex flex-wrap flex-row justify-center xl:justify-start items-center text-secondary">
-        <small className="text-sm p-1 rounded">
-          Total Propiedades: {totalItems ?? 0}
-        </small>
-        <span className="text-gray-300 mx-3">|</span>
-        <small className="text-sm p-1 rounded">
-          Por página: {paginationTopLimit.limit ?? 0}
-        </small>
+      <div className="flex flex-wrap flex-row justify-center xl:justify-start items-center text-secondary-700">
+        <p className="text-sm p-1 font-normal">
+        {totalItems ?? 0} Total Propiedades
+        </p>
       </div>
         <div>
           <ul className="flex">
@@ -66,15 +62,18 @@ const PropertiesTop = ({
             <li
               onClick={() => {
                 setIsGrid(true);
-                setIsList(false);
+                setIsMap(false);
+                // setIsList(false);
               }}
               className={`${
-                isGrid ? 'bg-secondary text-primary rounded-full' : 'bg-secondary-opacity text-primary rounded-full'
+                isGrid ? 'bg-secondary text-primary rounded-full' : 'bg-secondary-grey text-primary rounded-full'
               } mx-1 p-2.5 cursor-pointer `}
-            >
+            >  
+            <Link to="/propiedades">
               <BsFillGridFill />
+            </Link>
             </li>
-            <li
+            {/* <li
               onClick={() => {
                 setIsList(true);
                 setIsGrid(false);
@@ -86,11 +85,14 @@ const PropertiesTop = ({
               } mx-1 p-2.5 cursor-pointer`}
             >
               <FaThList />
-            </li>
-            <li className="mx-1 p-2.5 bg-secondary-opacity hover:bg-secondary duration-300 rounded-full cursor-pointer text-primary-700">
-              <Link to="/propiedades/propiedades-en-mapa">
-                <FaMapMarkerAlt />
-              </Link>
+            </li> */}
+            <li onClick={() => {
+                  setIsGrid(false);
+                  setIsMap(true);
+                }} className={`${isMap ? ' bg-secondary hover:bg-secondary-grey rounded-full duration-300  text-primary-700': 'bg-secondary text-primary rounded-full'} rounded-full cursor-pointer mx-1 p-2.5`}>
+                <Link to="/propiedades/propiedades-en-mapa">
+                  <FaMapMarkerAlt />
+                </Link>
             </li>
           </ul>
         </div>
