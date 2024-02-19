@@ -39,9 +39,9 @@ const ViewServices = () =>{
                                             <p className="text-secondary text-start text-sm">{item.description}</p>
                                         </div>
                                         <div className="card-body">
-                                            { item.button ? <button  onClick={toggleForm} className="bg-secondary text-primary p-2 text-base font-medium rounded-full">
+                                            { item.button ? <a  href="#formPublicUs" onClick={toggleForm} className="bg-secondary text-primary p-2 text-base font-medium rounded-full">
                                                             Completar formulario
-                                                    </button> : ''
+                                                    </a> : ''
                                                   }
                                         
                                         </div>

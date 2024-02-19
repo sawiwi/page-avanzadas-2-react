@@ -9,15 +9,15 @@ const ResumeInfoAbout = ()=>{
           </div> */}
           <div className='col-span-1 xl:flex xl:justify-between gap-10'>
                 <div className="text-center text-secondary-700 mt-8 mb-6 xl:mt-14 xl:mb-16" >
-                    <h3 className="text-6xl">153</h3>
+                    <h3 className="text-5xl">153</h3>
                     <p>Total propiedades</p>
                 </div>
                 <div className="text-center text-secondary-700 mb-6 xl:mt-14 xl:mb-16">
-                    <h3 className="text-6xl">74</h3>
+                    <h3 className="text-5xl">74</h3>
                     <p>Propiedades  vendidas</p>
                 </div>
                 <div className="text-center text-secondary-700 mb-6 xl:mt-14 xl:mb-16">
-                    <h3 className="text-6xl">34</h3>
+                    <h3 className="text-5xl">34</h3>
                     <p>Propiedades arrendadas</p>
                 </div>
           </div>

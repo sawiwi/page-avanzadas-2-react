@@ -4,6 +4,7 @@ import Head from '../../components/Head/Head';
 import PropertyComponent from '../../components/PageSections/Properties/components/Property';
 import PropertiesServices from '../../services/PropertiesServices';
 import { company } from '../../constants/consts/company';
+import Header from '../../components/Header/Header';
 
 const Property = () => {
   const { id } = useParams();
@@ -35,6 +36,9 @@ const Property = () => {
   return (
     <Fragment>
       <Head title={`${property?.title ?? 'cargando...'}`} />
+      <div className="z-0 inset-0 flex items-center justify-start w-100 pl-4 xl:pl-32">
+        <Header/>
+      </div>
       <PropertyComponent {...{ property }} />
     </Fragment>
   );

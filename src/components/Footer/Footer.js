@@ -7,7 +7,7 @@ import { iconsList } from '../Icons';
 const {FaMapMarkerAlt, AiFillPhone, FiMail} = iconsList
 
 const Footer = () => (
-  <footer className="bg-primary-700 pt-10 pb-10 xl:px-28">
+  <footer className="bg-primary-700 pt-10 pb-10 xl:px-28 z-50">
     <div className="flex flex-wrap  mx-4 lg:mx-0">
         <div className="w-full h-full mt-10 mb-10 mx-10 xl:mx-0 xl:mt-0 sm:w-1/2 xl:w-4/12 3xl:w-5/12 3xl:my-14 ">
           <div className="w-5/6">

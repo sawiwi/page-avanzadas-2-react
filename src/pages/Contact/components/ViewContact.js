@@ -5,7 +5,7 @@ import InfoContact from "./InfoContact";
 const ViewContact = () =>{
     return(
         <Section>
-            <div className="container">
+            <div className="container mt-36 mb-24  xl:mt-36 xl:mb-0">
                 <div className="grid  grid-cols-1 xl:grid-cols-2 px-2 xl:px-44">
                     <div className="col-span-1">
                         <InfoContact />

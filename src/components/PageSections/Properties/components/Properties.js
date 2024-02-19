@@ -58,7 +58,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
 
   return (
     <React.Fragment>
-      <div className="flex relative flex-col w-[100%]">
+      <div className="flex relative flex-col w-[100%] mt-36 mb-24  xl:mt-36 xl:mb-0">
         <PropertiesTop
           {...{
             totalItems,

@@ -29,13 +29,13 @@ const AboutInfo = () => {
       {/* <div className="absolute inset-0 top-0 flex items-center justify-start w-100 pl-4 xl:pl-32 bg-black bg-opacity-5 xl:bg-white xl:bg-opacity-30 shadow-lg">
           <Header/>
       </div> */}
-      <div className="container">
+      <div className="container mt-36 mb-24  xl:mt-36 xl:mb-0">
         <div className='flex justify-start px-6 xl:px-64'>
-          <h2 className='xl:text-3xl 3xl:text-5xl font-bold text-secondary-ligth'>Nosotros</h2>
+          <h2 className='text-4xl xl:text-5xl font-bold text-secondary-ligth'>Nosotros</h2>
         </div>
         <div className="grid grid-cols-1 xl:grid-cols-3 items-center w-full pb-1 px-6 xl:px-64">  
           <div className='xl:col-span-1'>
-            <img className="w-full h-[690px] object-cover object-center"  src={'https://res.cloudinary.com/dvdb33uyj/image/upload/v1689975597/Projects/unne/img/hero/tramite2.jpg'}/>
+            <img className="mt-8 xl:mt-0 w-full h-[690px] object-cover object-center"  src={'https://res.cloudinary.com/dvdb33uyj/image/upload/v1689975597/Projects/unne/img/hero/tramite2.jpg'}/>
           </div>   
           <div className="xl:col-span-2 w-full xl:min-h-[15.5rem] m-2 xl:m-6">
             <div className='grid grid-flow-row'>

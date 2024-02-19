@@ -57,7 +57,7 @@ const PropertyComponent = ({ property }) => {
       {loadingOnStart && <Spinner />}
 
       {Object.keys(property).length > 0 && (
-        <div className="my-10 px-4">
+        <div className="my-10 px-4 mt-36 mb-24  xl:mt-36 xl:mb-0">
           <div className="grid grid-cols-1 xl:grid-cols-2  gap-4 mx-auto">
             <div className="sm:col-span-6 col-span-3 xl:col-span-3  max-h-auto  ">
               <Details property={property} />
